@@ -2,6 +2,14 @@
 
 A modern, production-grade Academic Portfolio and Digital Curriculum Vitae web application built for **Mohammed Ikrama Shakeel Ahmed**, Assistant Professor of Pharmacology and Ph.D. Researcher in Pharmaceutical Sciences.
 
+[![Live Production](https://img.shields.io/badge/Live%20Website-mohammed--ikrama--portfolio.vercel.app-emerald?style=for-the-badge&logo=vercel)](https://mohammed-ikrama-portfolio.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-bogtem3156%2Fmohammed--ikrama--portfolio-181717?style=for-the-badge&logo=github)](https://github.com/bogtem3156/mohammed-ikrama-portfolio)
+[![ATS Academic CV](https://img.shields.io/badge/Printable%20CV-%2Fcv-0284c7?style=for-the-badge&logo=adobeacrobatreader)](https://mohammed-ikrama-portfolio.vercel.app/cv)
+
+- 🌐 **Live Website:** [https://mohammed-ikrama-portfolio.vercel.app](https://mohammed-ikrama-portfolio.vercel.app)
+- 📄 **Printable ATS Academic CV:** [https://mohammed-ikrama-portfolio.vercel.app/cv](https://mohammed-ikrama-portfolio.vercel.app/cv)
+- 📦 **GitHub Repository:** [https://github.com/bogtem3156/mohammed-ikrama-portfolio](https://github.com/bogtem3156/mohammed-ikrama-portfolio)
+
 ---
 
 ## 🔬 Academic Profile & Verified Information
