@@ -108,12 +108,12 @@ export function ContactSection() {
               <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3.5">
                 
                 {/* Official Email */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
-                  <div className="flex items-center gap-3 min-w-0">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3.5 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800 w-full max-w-full overflow-hidden">
+                  <div className="flex items-center gap-3 min-w-0 w-full md:w-auto">
                     <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Primary Academic Email</p>
                       <a
                         href={`mailto:${personalInfo.email}`}
@@ -124,7 +124,7 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 shrink-0 self-end sm:self-center">
+                  <div className="flex items-center gap-2 shrink-0 self-end md:self-center w-full md:w-auto justify-end pt-1 md:pt-0 border-t md:border-t-0 border-slate-200/60 dark:border-slate-800">
                     <button
                       onClick={handleCopyEmail}
                       type="button"
@@ -135,7 +135,7 @@ export function ContactSection() {
                     </button>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
+                      className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
                     >
                       Compose
                     </a>
@@ -143,12 +143,12 @@ export function ContactSection() {
                 </div>
 
                 {/* Telephone & WhatsApp */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
-                  <div className="flex items-center gap-3 min-w-0">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3.5 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800 w-full max-w-full overflow-hidden">
+                  <div className="flex items-center gap-3 min-w-0 w-full md:w-auto">
                     <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                       <Phone className="w-4 h-4" />
                     </div>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Direct Mobile & WhatsApp</p>
                       <a
                         href={`tel:${personalInfo.phone}`}
@@ -159,7 +159,7 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 shrink-0 self-end sm:self-center">
+                  <div className="flex items-center gap-2 shrink-0 self-end md:self-center w-full md:w-auto justify-end pt-1 md:pt-0 border-t md:border-t-0 border-slate-200/60 dark:border-slate-800">
                     <button
                       onClick={handleCopyPhone}
                       type="button"
@@ -172,7 +172,7 @@ export function ContactSection() {
                       href="https://wa.me/919511602973"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors"
+                      className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors"
                     >
                       <MessageSquare className="w-3.5 h-3.5" />
                       <span>WhatsApp</span>
@@ -181,12 +181,12 @@ export function ContactSection() {
                 </div>
 
                 {/* ORCID Researcher ID */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
-                  <div className="flex items-center gap-3 min-w-0">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-3.5 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800 w-full max-w-full overflow-hidden">
+                  <div className="flex items-center gap-3 min-w-0 w-full md:w-auto">
                     <div className="w-9 h-9 rounded-lg bg-[#A6CE39]/15 flex items-center justify-center text-[#A6CE39] font-bold text-xs shrink-0">
                       iD
                     </div>
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <p className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">ORCID Identifier</p>
                       <a
                         href={personalInfo.orcidUrl}
@@ -200,14 +200,16 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <button
-                    onClick={handleCopyOrcid}
-                    type="button"
-                    title="Copy ORCID"
-                    className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0 self-end sm:self-center cursor-pointer"
-                  >
-                    {copiedOrcid ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
-                  </button>
+                  <div className="flex items-center gap-2 shrink-0 self-end md:self-center w-full md:w-auto justify-end pt-1 md:pt-0 border-t md:border-t-0 border-slate-200/60 dark:border-slate-800">
+                    <button
+                      onClick={handleCopyOrcid}
+                      type="button"
+                      title="Copy ORCID"
+                      className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0 cursor-pointer"
+                    >
+                      {copiedOrcid ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
+                    </button>
+                  </div>
                 </div>
 
               </div>
@@ -243,16 +245,16 @@ export function ContactSection() {
             <div className="h-full rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-xs flex flex-col">
               
               {/* Map Header */}
-              <div className="p-4 sm:p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+              <div className="p-4 md:p-5 border-b border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 w-full">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0">
                     <Navigation className="w-4 h-4" />
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <div className="min-w-0">
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white truncate">
                       Gangamai Institute of Pharmacy Campus
                     </h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
                       Nagaon, Dhule, Maharashtra
                     </p>
                   </div>
@@ -262,7 +264,7 @@ export function ContactSection() {
                   href="https://maps.google.com/?q=Gangamai+Institute+of+Pharmacy+Nagaon+Dhule"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors shadow-2xs"
+                  className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white transition-colors shadow-2xs w-full sm:w-auto"
                 >
                   <span>Get Directions</span>
                   <ExternalLink className="w-3.5 h-3.5" />

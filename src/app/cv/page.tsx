@@ -66,7 +66,7 @@ export function AcademicCVPage() {
         
         {/* CV Masthead: Strictly Visible in Print & Web */}
         <div className="cv-masthead border-b-2 border-slate-900 dark:border-slate-200 print:border-black pb-3 mb-3 break-inside-avoid print:block">
-          <div className="flex flex-col sm:flex-row items-start justify-between gap-2.5">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-2.5">
             <div>
               <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-950 dark:text-white print:text-black leading-tight">
                 {personalInfo.fullName}
@@ -80,8 +80,8 @@ export function AcademicCVPage() {
             </div>
 
             {/* Registration Box */}
-            <div className="text-left sm:text-right text-[10.5px] leading-tight bg-slate-50 dark:bg-slate-900/80 print:bg-transparent p-2 rounded-xl border border-slate-200 dark:border-slate-800 print:border-none print:p-0">
-              <p className="font-bold text-emerald-700 dark:text-emerald-400 print:text-black flex items-center gap-1 sm:justify-end">
+            <div className="text-left md:text-right text-[10.5px] leading-tight bg-slate-50 dark:bg-slate-900/80 print:bg-transparent p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 print:border-none print:p-0 w-full md:w-auto mt-1 md:mt-0">
+              <p className="font-bold text-emerald-700 dark:text-emerald-400 print:text-black flex items-center gap-1 md:justify-end">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Registered Pharmacist (MSPC)</span>
               </p>
@@ -95,7 +95,7 @@ export function AcademicCVPage() {
           </div>
 
           {/* Quick Contact Coordinates Bar */}
-          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 print:border-neutral-300 flex flex-wrap items-center justify-between gap-y-1 text-[10.5px] text-slate-600 dark:text-slate-400 print:text-neutral-800">
+          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 print:border-neutral-300 flex flex-col md:flex-row flex-wrap md:items-center justify-between gap-1 text-[10.5px] text-slate-600 dark:text-slate-400 print:text-neutral-800">
             <span>Email: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.email}</strong></span>
             <span>Tel: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.phone}</strong></span>
             <span>ORCID: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.orcid}</strong></span>

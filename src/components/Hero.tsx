@@ -189,10 +189,10 @@ export function Hero() {
             </div>
 
             {/* Action Buttons: View CV, Explore Research, Verified Scans */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2 w-full sm:w-auto">
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center lg:justify-start gap-3 pt-2 w-full md:w-auto">
               <a
                 href="/cv"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer w-full md:w-auto text-center"
               >
                 <FileText className="w-4 h-4" />
                 <span>View Academic CV</span>
@@ -201,7 +201,7 @@ export function Hero() {
               <a
                 href="#research"
                 onClick={(e) => handleSmoothScroll(e, "#research")}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-[#131c31] text-slate-800 dark:text-slate-100 font-semibold text-sm border border-slate-300 dark:border-slate-700/80 hover:bg-emerald-50/80 hover:border-emerald-500 hover:text-emerald-700 dark:hover:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:text-emerald-300 transition-all hover:-translate-y-0.5 active:scale-95 shadow-2xs hover:shadow-md cursor-pointer w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-[#131c31] text-slate-800 dark:text-slate-100 font-semibold text-sm border border-slate-300 dark:border-slate-700/80 hover:bg-emerald-50/80 hover:border-emerald-500 hover:text-emerald-700 dark:hover:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:text-emerald-300 transition-all hover:-translate-y-0.5 active:scale-95 shadow-2xs hover:shadow-md cursor-pointer w-full md:w-auto text-center"
               >
                 <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Explore Research</span>
@@ -210,7 +210,7 @@ export function Hero() {
               <a
                 href="#credentials"
                 onClick={(e) => handleSmoothScroll(e, "#credentials")}
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-slate-600 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400 text-sm font-semibold hover:translate-x-0.5 transition-all cursor-pointer w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-slate-600 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400 text-sm font-semibold hover:translate-x-0.5 transition-all cursor-pointer w-full md:w-auto text-center"
               >
                 <span>Verified Scans</span>
                 <ArrowRight className="w-4 h-4" />
@@ -218,10 +218,10 @@ export function Hero() {
             </div>
 
             {/* Clean Contact Chips Row */}
-            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 w-full">
+            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col md:flex-row flex-wrap items-stretch md:items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 w-full">
               
               {/* Email Chip */}
-              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+              <div className="flex items-center justify-between md:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3.5 py-2 md:py-1.5 rounded-xl md:rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs w-full md:w-auto max-w-full overflow-hidden">
                 <div className="flex items-center gap-1.5 truncate">
                   <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <a 
@@ -242,7 +242,7 @@ export function Hero() {
               </div>
 
               {/* Phone Chip */}
-              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+              <div className="flex items-center justify-between md:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3.5 py-2 md:py-1.5 rounded-xl md:rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs w-full md:w-auto max-w-full overflow-hidden">
                 <div className="flex items-center gap-1.5 truncate">
                   <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                   <a 
@@ -263,7 +263,7 @@ export function Hero() {
               </div>
 
               {/* ORCID Chip */}
-              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+              <div className="flex items-center justify-between md:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3.5 py-2 md:py-1.5 rounded-xl md:rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs w-full md:w-auto max-w-full overflow-hidden">
                 <div className="flex items-center gap-1.5 truncate">
                   <span className="w-3.5 h-3.5 rounded-full bg-[#A6CE39] text-[9px] text-white font-bold flex items-center justify-center leading-none shrink-0">
                     iD
@@ -297,15 +297,15 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
-            className="lg:col-span-5 flex justify-center items-center w-full"
+            className="lg:col-span-5 flex justify-center items-center w-full max-w-full overflow-hidden px-2 sm:px-4 lg:px-0"
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[370px] group mx-auto">
+            <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] group mx-auto">
               
               {/* Outer Animated Glowing Gradient Frame */}
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-slate-800 opacity-60 dark:opacity-75 blur-md group-hover:opacity-90 transition-opacity duration-500" />
               
               {/* Card Container */}
-              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#131c31] border border-slate-200 dark:border-slate-800 shadow-2xl p-2.5">
+              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#131c31] border border-slate-200 dark:border-slate-800 shadow-2xl p-2.5 sm:p-3 w-full">
                 
                 {/* Portrait Photo Container with full uncropped head & face */}
                 <div className="relative aspect-[1105/1424] w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">
@@ -314,28 +314,28 @@ export function Hero() {
                     alt={personalInfo.fullName}
                     fill
                     priority
-                    sizes="(max-width: 768px) 280px, 370px"
+                    sizes="(max-width: 768px) 100vw, 360px"
                     className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating verification badge anchored at bottom of portrait */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-white/95 dark:bg-[#131c31]/95 backdrop-blur-md border border-white/20 dark:border-slate-700/70 shadow-lg">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                          <ShieldCheck className="w-4 h-4" />
+                  <div className="absolute bottom-2 left-2 right-2 p-2 sm:p-2.5 rounded-xl bg-white/95 dark:bg-[#131c31]/95 backdrop-blur-md border border-white/20 dark:border-slate-700/70 shadow-lg">
+                    <div className="flex items-center justify-between gap-1">
+                      <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                        <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                          <ShieldCheck className="w-3.5 h-3.5" />
                         </div>
-                        <div>
-                          <p className="text-xs font-bold text-slate-900 dark:text-white leading-tight">
+                        <div className="min-w-0 truncate">
+                          <p className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white leading-tight truncate">
                             Reg. Pharmacist
                           </p>
-                          <p className="text-[10px] text-slate-500 dark:text-slate-400 font-mono leading-tight">
+                          <p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 font-mono leading-tight truncate">
                             MSPC #{personalInfo.registration.regNumber}
                           </p>
                         </div>
                       </div>
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
+                      <span className="shrink-0 px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20">
                         Active 2053
                       </span>
                     </div>
