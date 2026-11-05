@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolioData";
 import { copyToClipboard } from "@/lib/utils";
@@ -18,11 +17,7 @@ import {
   Copy, 
   Check, 
   ExternalLink,
-  Sparkles,
-  MapPin,
-  FlaskConical,
-  Atom,
-  CheckCircle2
+  MapPin
 } from "lucide-react";
 
 export function Hero() {
@@ -52,6 +47,22 @@ export function Hero() {
     if (success) {
       setCopiedOrcid(true);
       setTimeout(() => setCopiedOrcid(false), 2200);
+    }
+  };
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const id = targetId.replace("#", "");
+    const targetEl = document.getElementById(id);
+    if (targetEl) {
+      const headerOffset = 80;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      window.history.pushState(null, "", `#${id}`);
     }
   };
 
@@ -114,33 +125,17 @@ export function Hero() {
             initial={{ opacity: 0, x: -25 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-7 text-center lg:text-left"
+            className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             
-            {/* Scientific Badges Row */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/20 shadow-2xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                MSPC Registered Pharmacist (#375736)
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-700 dark:text-teal-400 border border-teal-500/20 shadow-2xs">
-                <GraduationCap className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                Ph.D. Researcher (Winter 2024)
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-400 border border-blue-500/20 shadow-2xs">
-                <Award className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                Avishkar Institute Coordinator (DBATU)
-              </span>
-            </div>
-
-            {/* Academic Name & Title Hierarchy */}
-            <div className="space-y-3">
+            {/* Academic Name & Hierarchy */}
+            <div className="space-y-2.5">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.14]">
                 {personalInfo.fullName}
               </h1>
               
               <div className="space-y-1">
-                <p className="text-lg sm:text-xl font-bold text-emerald-700 dark:text-emerald-400 tracking-tight">
+                <p className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400 tracking-tight">
                   {personalInfo.role}
                 </p>
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium">
@@ -152,6 +147,22 @@ export function Hero() {
                   </span>
                 </div>
               </div>
+            </div>
+
+            {/* Scientific Badges Row - Elegantly Placed BELOW Title */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 pb-1">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25 shadow-2xs">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                <span>MSPC Registered Pharmacist (#375736)</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/25 shadow-2xs">
+                <GraduationCap className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+                <span>Ph.D. Researcher (Winter 2024)</span>
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/25 shadow-2xs">
+                <Award className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+                <span>Avishkar Institute Coordinator (DBATU)</span>
+              </span>
             </div>
 
             {/* Academic Summary Paragraph */}
@@ -169,7 +180,7 @@ export function Hero() {
               ].map((topic) => (
                 <span
                   key={topic}
-                  className="px-3 py-1 text-xs font-medium rounded-lg bg-white dark:bg-[#111827] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs"
+                  className="px-3 py-1 text-xs font-medium rounded-lg bg-white dark:bg-[#131c31] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs"
                 >
                   {topic}
                 </span>
@@ -177,17 +188,18 @@ export function Hero() {
             </div>
 
             {/* Action Buttons: View CV, Explore Research, Verified Scans */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
-              <Link
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+              <a
                 href="/cv"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer"
               >
                 <FileText className="w-4 h-4" />
                 <span>View Academic CV</span>
-              </Link>
+              </a>
 
               <a
-                href="#publications"
+                href="#research"
+                onClick={(e) => handleSmoothScroll(e, "#research")}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-[#131c31] text-slate-800 dark:text-slate-100 font-semibold text-sm border border-slate-300 dark:border-slate-700/80 hover:bg-emerald-50/80 hover:border-emerald-500 hover:text-emerald-700 dark:hover:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:text-emerald-300 transition-all hover:-translate-y-0.5 active:scale-95 shadow-2xs hover:shadow-md cursor-pointer"
               >
                 <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -196,6 +208,7 @@ export function Hero() {
 
               <a
                 href="#credentials"
+                onClick={(e) => handleSmoothScroll(e, "#credentials")}
                 className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-slate-600 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400 text-sm font-semibold hover:translate-x-0.5 transition-all cursor-pointer"
               >
                 <span>Verified Scans</span>
@@ -207,7 +220,7 @@ export function Hero() {
             <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-600 dark:text-slate-400">
               
               {/* Email Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#111827] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
+              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
                 <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 <a 
                   href={`mailto:${personalInfo.email}`}
@@ -219,14 +232,14 @@ export function Hero() {
                   onClick={handleCopyEmail}
                   type="button"
                   title="Copy email address"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
                 >
                   {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {/* Phone Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#111827] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
+              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
                 <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                 <a 
                   href={`tel:${personalInfo.phone}`}
@@ -238,14 +251,14 @@ export function Hero() {
                   onClick={handleCopyPhone}
                   type="button"
                   title="Copy phone number"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
                 >
                   {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {/* ORCID Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#111827] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
+              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
                 <span className="w-3.5 h-3.5 rounded-full bg-[#A6CE39] text-[9px] text-white font-bold flex items-center justify-center leading-none">
                   iD
                 </span>
@@ -262,7 +275,7 @@ export function Hero() {
                   onClick={handleCopyOrcid}
                   type="button"
                   title="Copy ORCID ID"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
                 >
                   {copiedOrcid ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
@@ -279,32 +292,32 @@ export function Hero() {
             transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
             className="lg:col-span-5 flex justify-center items-center"
           >
-            <div className="relative w-full max-w-[320px] sm:max-w-[340px] group">
+            <div className="relative w-full max-w-[340px] sm:max-w-[370px] group">
               
               {/* Outer Animated Glowing Gradient Frame */}
-              <div className="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-slate-800 opacity-60 dark:opacity-75 blur-md group-hover:opacity-90 transition-opacity duration-500" />
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-slate-800 opacity-60 dark:opacity-75 blur-md group-hover:opacity-90 transition-opacity duration-500" />
               
               {/* Card Container */}
-              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#131c31] border border-slate-200 dark:border-slate-800 shadow-2xl p-2.5">
                 
-                {/* Portrait Photo Container */}
-                <div className="relative aspect-[3/3.8] w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
+                {/* Portrait Photo Container with full uncropped head & face */}
+                <div className="relative aspect-[1105/1424] w-full overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">
                   <Image
-                    src={personalInfo.photo.webp}
+                    src="/assets/profile/photo.jpg"
                     alt={personalInfo.fullName}
                     fill
                     priority
-                    sizes="(max-width: 768px) 320px, 340px"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    sizes="(max-width: 768px) 340px, 370px"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/15 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating verification badge anchored at bottom of portrait */}
-                  <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-white/95 dark:bg-[#111827]/95 backdrop-blur-md border border-white/20 dark:border-slate-700/70 shadow-lg">
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-xl bg-white/95 dark:bg-[#131c31]/95 backdrop-blur-md border border-white/20 dark:border-slate-700/70 shadow-lg">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                          <ShieldCheck className="w-5 h-5" />
+                      <div className="flex items-center gap-2">
+                        <div className="w-7 h-7 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                          <ShieldCheck className="w-4 h-4" />
                         </div>
                         <div>
                           <p className="text-xs font-bold text-slate-900 dark:text-white leading-tight">
@@ -323,7 +336,7 @@ export function Hero() {
                 </div>
 
                 {/* Sub-card details */}
-                <div className="p-4 bg-white dark:bg-[#111827] text-left space-y-2 border-t border-slate-100 dark:border-slate-800">
+                <div className="pt-3 pb-1 px-2 bg-white dark:bg-[#131c31] text-left space-y-1.5 border-t border-slate-100 dark:border-slate-800/80 mt-2">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-slate-500 dark:text-slate-400 font-medium">Designation</span>
                     <span className="font-semibold text-slate-900 dark:text-slate-100">Assistant Professor</span>
@@ -356,7 +369,7 @@ export function Hero() {
           {metrics.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-2xs hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-0.5"
+              className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#131c31] border border-slate-200/80 dark:border-slate-800 shadow-2xs hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-0.5"
             >
               <p className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {stat.value}

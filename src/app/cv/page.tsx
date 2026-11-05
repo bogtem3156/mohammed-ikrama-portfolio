@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { portfolioData } from "@/data/portfolioData";
 import { 
   Printer, 
@@ -8,61 +7,68 @@ import {
   ShieldCheck,
   GraduationCap,
   FlaskConical,
-  Award
+  Download
 } from "lucide-react";
 
-export default function AcademicCVPage() {
-  const { personalInfo, education, publications, conferences, teaching, workshops } = portfolioData;
+export function AcademicCVPage() {
+  const { personalInfo, education, publications, conferences, teaching } = portfolioData;
 
   const handlePrint = (e?: React.MouseEvent) => {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
-    if (typeof window !== "undefined") {
-      try {
-        window.print();
-      } catch {
-        setTimeout(() => window.print(), 50);
-      }
-    }
+    window.print();
   };
 
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-[#0c1222] text-slate-900 dark:text-slate-100 font-sans print:bg-white print:text-black">
       
       {/* Floating Action Bar (Strictly Hidden on Print) */}
-      <aside aria-label="CV Actions" className="sticky top-0 z-40 bg-white/95 dark:bg-[#111a2e]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xs print:hidden">
+      <aside aria-label="CV Actions" className="sticky top-0 z-40 bg-white/95 dark:bg-[#111a2e]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-xs no-print print:hidden">
         <div className="max-w-4xl mx-auto px-4 py-2.5 flex items-center justify-between">
-          <Link
+          <a
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Portfolio</span>
-          </Link>
+          </a>
 
-          {/* Sole Primary Print Action Button */}
-          <button
-            onClick={handlePrint}
-            type="button"
-            id="print-cv-btn"
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-all hover:shadow-md cursor-pointer active:scale-95"
-          >
-            <Printer className="w-4 h-4" />
-            <span>Print / Save as PDF</span>
-          </button>
+          <div className="flex items-center gap-2.5">
+            {/* Direct Static PDF Fallback Download */}
+            <a
+              href="/assets/CV.pdf"
+              download="Mohammed_Ikrama_CV.pdf"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all shadow-2xs cursor-pointer"
+              title="Download pre-generated static PDF file"
+            >
+              <Download className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+              <span>Download PDF</span>
+            </a>
+
+            {/* Primary System Print / Save as PDF Action */}
+            <button
+              onClick={handlePrint}
+              type="button"
+              id="print-cv-btn"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-all hover:shadow-md cursor-pointer active:scale-95"
+            >
+              <Printer className="w-4 h-4" />
+              <span>Print / Save as PDF</span>
+            </button>
+          </div>
         </div>
       </aside>
 
       {/* Main CV Document Container (Compact Single/Two-Page Executive Format) */}
       <main className="max-w-4xl mx-auto my-4 sm:my-6 p-4 sm:p-7 md:p-8 bg-white dark:bg-[#111a2e] print:bg-white print:text-black shadow-md rounded-2xl print:shadow-none print:rounded-none print:p-0 print:m-0 border border-slate-200/80 dark:border-slate-800 print:border-none text-[11px] leading-snug">
         
-        {/* CV Header: Compact, Dense Academic Masthead */}
-        <header className="border-b-2 border-slate-900 dark:border-slate-200 print:border-black pb-3 mb-3 break-inside-avoid">
+        {/* CV Masthead: Strictly Visible in Print & Web */}
+        <div className="cv-masthead border-b-2 border-slate-900 dark:border-slate-200 print:border-black pb-3 mb-3 break-inside-avoid print:block">
           <div className="flex flex-col sm:flex-row items-start justify-between gap-2.5">
             <div>
-              <h1 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-slate-950 dark:text-white print:text-black leading-tight">
+              <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-slate-950 dark:text-white print:text-black leading-tight">
                 {personalInfo.fullName}
               </h1>
               <p className="text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-400 print:text-black mt-0.5">
@@ -89,13 +95,13 @@ export default function AcademicCVPage() {
           </div>
 
           {/* Quick Contact Coordinates Bar */}
-          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 print:border-neutral-200 flex flex-wrap items-center justify-between gap-y-1 text-[10.5px] text-slate-600 dark:text-slate-400 print:text-neutral-800">
+          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 print:border-neutral-300 flex flex-wrap items-center justify-between gap-y-1 text-[10.5px] text-slate-600 dark:text-slate-400 print:text-neutral-800">
             <span>Email: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.email}</strong></span>
             <span>Tel: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.phone}</strong></span>
             <span>ORCID: <strong className="font-mono text-slate-900 dark:text-white print:text-black">{personalInfo.orcid}</strong></span>
             <span>Location: <strong className="text-slate-900 dark:text-white print:text-black">{personalInfo.location}</strong></span>
           </div>
-        </header>
+        </div>
 
         {/* Dense 2-Column Academic Executive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 print:grid-cols-12 print:gap-3.5 items-start">
@@ -299,10 +305,10 @@ export default function AcademicCVPage() {
             </section>
 
             {/* Institutional Declaration */}
-            <footer className="break-inside-avoid pt-2 border-t border-slate-200 dark:border-slate-800 print:border-neutral-300 text-[9.5px] text-slate-500 dark:text-slate-400 print:text-neutral-600 flex justify-between items-center">
+            <div className="cv-footer break-inside-avoid pt-2 border-t border-slate-200 dark:border-slate-800 print:border-neutral-300 text-[9.5px] text-slate-500 dark:text-slate-400 print:text-neutral-600 flex justify-between items-center">
               <span>Verified academic CV of Mohammed Ikrama Shakeel Ahmed</span>
               <span className="font-mono">MSPC Reg No. 375736</span>
-            </footer>
+            </div>
 
           </div>
 
@@ -312,3 +318,5 @@ export default function AcademicCVPage() {
     </div>
   );
 }
+
+export default AcademicCVPage;

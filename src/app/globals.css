@@ -65,7 +65,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   }
 
-  header, nav, footer, aside, .no-print {
+  nav, aside, .no-print, [role="navigation"] {
     display: none !important;
   }
 

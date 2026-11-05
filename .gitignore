@@ -46,3 +46,5 @@ process_assets.py
 Thumbs.db
 *.bak
 *.tmp
+
+.vercel

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import { 
   FileText, 
@@ -33,30 +31,50 @@ export function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetEl = document.getElementById(targetId);
+
+      if (targetEl) {
+        const headerOffset = 80;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        window.history.pushState(null, "", href);
+      } else {
+        // If target element not in current DOM (e.g. on /cv), redirect to home page section
+        window.location.href = `/${href}`;
+      }
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 dark:bg-[#0c1222]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs"
+          ? "bg-white/95 dark:bg-[#0c1222]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           
-          {/* Logo & Professor Avatar */}
-          <Link 
-            href="#about" 
-            className="group flex items-center gap-3 transition-transform hover:scale-[1.01]"
+          {/* Logo / Monogram */}
+          <a 
+            href="#about"
+            onClick={(e) => handleNavClick(e, "#about")}
+            className="group flex items-center gap-3 transition-transform hover:scale-[1.01] cursor-pointer"
           >
-            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-emerald-500/80 shadow-md group-hover:ring-emerald-400 transition-all shrink-0 bg-slate-200 dark:bg-slate-800">
-              <Image
-                src="/assets/profile/photo-thumb.webp"
-                alt="Mohammed Ikrama"
-                fill
-                sizes="40px"
-                className="object-cover object-top"
-              />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-slate-900 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-emerald-700/20 group-hover:shadow-emerald-600/30 transition-all shrink-0">
+              MI
             </div>
             <div className="flex flex-col">
               <span className="font-semibold text-slate-900 dark:text-white text-base tracking-tight leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
@@ -66,30 +84,31 @@ export function Navbar() {
                 Asst. Professor of Pharmacology
               </span>
             </div>
-          </Link>
+          </a>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-400 rounded-lg hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-emerald-700 dark:text-slate-300 dark:hover:text-emerald-400 rounded-lg hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
           {/* Right Header Actions */}
           <div className="hidden sm:flex items-center gap-3">
-            <Link
+            <a
               href="/cv"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/60 transition-all shadow-2xs"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/60 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/60 transition-all shadow-2xs cursor-pointer"
             >
               <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>Academic CV</span>
-            </Link>
+            </a>
 
             <ThemeToggle />
           </div>
@@ -101,7 +120,7 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
               aria-label="Toggle navigation menu"
-              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -111,29 +130,29 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0B0F19]/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0c1222]/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:text-emerald-600 dark:text-slate-200 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors cursor-pointer"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
 
           <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
-            <Link
+            <a
               href="/cv"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-600 text-white font-medium text-sm shadow-xs hover:bg-emerald-700 transition-colors"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-emerald-600 text-white font-medium text-sm shadow-xs hover:bg-emerald-700 transition-colors cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               <span>View & Print Academic CV</span>
-            </Link>
+            </a>
           </div>
         </div>
       )}
