@@ -104,11 +104,11 @@ export function AcademicTimeline() {
 
                   {/* Card side */}
                   <div
-                    className={`w-full sm:w-1/2 pl-12 sm:pl-0 ${
+                    className={`w-full sm:w-1/2 pl-10 sm:pl-0 ${
                       isEven ? "sm:pr-10" : "sm:pl-10"
                     }`}
                   >
-                    <div className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-lg hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300">
+                    <div className="p-4 sm:p-6 md:p-7 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-lg hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300">
                       
                       {/* Year & Badge Header */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">

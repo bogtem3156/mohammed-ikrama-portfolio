@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 import { 
   FileText, 
@@ -67,20 +68,27 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           
-          {/* Logo / Monogram */}
+          {/* Logo / Portrait Avatar Branding */}
           <a 
             href="#about"
             onClick={(e) => handleNavClick(e, "#about")}
-            className="group flex items-center gap-3 transition-transform hover:scale-[1.01] cursor-pointer"
+            className="group flex items-center gap-2.5 sm:gap-3 transition-transform hover:scale-[1.01] cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-slate-900 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-emerald-700/20 group-hover:shadow-emerald-600/30 transition-all shrink-0">
-              MI
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-emerald-600/80 dark:border-emerald-500/80 shadow-xs shrink-0 bg-emerald-50 dark:bg-emerald-950">
+              <Image
+                src="/assets/profile/photo-thumb.webp"
+                alt="Mohammed Ikrama"
+                width={40}
+                height={40}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-slate-900 dark:text-white text-base tracking-tight leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <span className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base tracking-tight leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 Mohammed Ikrama
               </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+              <span className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight truncate max-w-[170px] sm:max-w-none">
                 Asst. Professor of Pharmacology
               </span>
             </div>

@@ -130,43 +130,44 @@ export function Hero() {
             
             {/* Academic Name & Hierarchy */}
             <div className="space-y-2.5">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.14]">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-[46px] font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.14] break-words">
                 {personalInfo.fullName}
               </h1>
               
-              <div className="space-y-1">
+              <div className="space-y-2">
                 <p className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400 tracking-tight">
                   {personalInfo.role}
                 </p>
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium">
+
+                {/* Scientific Credential Pills - Elegantly Placed BELOW Title */}
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 pb-1">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700/80 shadow-2xs max-w-full">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span className="leading-tight">MSPC Registered Pharmacist (#375736)</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 border border-teal-300 dark:border-teal-700/80 shadow-2xs max-w-full">
+                    <GraduationCap className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+                    <span className="leading-tight">Ph.D. Researcher (Winter 2024)</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 dark:bg-blue-950/70 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-700/80 shadow-2xs max-w-full">
+                    <Award className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+                    <span className="leading-tight">Avishkar Institute Coordinator (DBATU)</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">
                   <span className="font-semibold text-slate-800 dark:text-slate-100">{personalInfo.institution}</span>
                   <span className="text-slate-400">•</span>
                   <span className="flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                     <span>{personalInfo.location}</span>
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Scientific Badges Row - Elegantly Placed BELOW Title */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1 pb-1">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25 shadow-2xs">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <span>MSPC Registered Pharmacist (#375736)</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/25 shadow-2xs">
-                <GraduationCap className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                <span>Ph.D. Researcher (Winter 2024)</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/25 shadow-2xs">
-                <Award className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                <span>Avishkar Institute Coordinator (DBATU)</span>
-              </span>
-            </div>
-
             {/* Academic Summary Paragraph */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {personalInfo.shortBio}
             </p>
 
@@ -180,7 +181,7 @@ export function Hero() {
               ].map((topic) => (
                 <span
                   key={topic}
-                  className="px-3 py-1 text-xs font-medium rounded-lg bg-white dark:bg-[#131c31] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs"
+                  className="px-2.5 sm:px-3 py-1 text-xs font-medium rounded-lg bg-white dark:bg-[#131c31] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 shadow-2xs"
                 >
                   {topic}
                 </span>
@@ -188,10 +189,10 @@ export function Hero() {
             </div>
 
             {/* Action Buttons: View CV, Explore Research, Verified Scans */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2 w-full sm:w-auto">
               <a
                 href="/cv"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:scale-95 cursor-pointer w-full sm:w-auto text-center"
               >
                 <FileText className="w-4 h-4" />
                 <span>View Academic CV</span>
@@ -200,7 +201,7 @@ export function Hero() {
               <a
                 href="#research"
                 onClick={(e) => handleSmoothScroll(e, "#research")}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-[#131c31] text-slate-800 dark:text-slate-100 font-semibold text-sm border border-slate-300 dark:border-slate-700/80 hover:bg-emerald-50/80 hover:border-emerald-500 hover:text-emerald-700 dark:hover:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:text-emerald-300 transition-all hover:-translate-y-0.5 active:scale-95 shadow-2xs hover:shadow-md cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white dark:bg-[#131c31] text-slate-800 dark:text-slate-100 font-semibold text-sm border border-slate-300 dark:border-slate-700/80 hover:bg-emerald-50/80 hover:border-emerald-500 hover:text-emerald-700 dark:hover:bg-emerald-950/40 dark:hover:border-emerald-500/60 dark:hover:text-emerald-300 transition-all hover:-translate-y-0.5 active:scale-95 shadow-2xs hover:shadow-md cursor-pointer w-full sm:w-auto text-center"
               >
                 <BookOpen className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                 <span>Explore Research</span>
@@ -209,7 +210,7 @@ export function Hero() {
               <a
                 href="#credentials"
                 onClick={(e) => handleSmoothScroll(e, "#credentials")}
-                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl text-slate-600 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400 text-sm font-semibold hover:translate-x-0.5 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-slate-600 hover:text-emerald-600 dark:text-slate-300 dark:hover:text-emerald-400 text-sm font-semibold hover:translate-x-0.5 transition-all cursor-pointer w-full sm:w-auto text-center"
               >
                 <span>Verified Scans</span>
                 <ArrowRight className="w-4 h-4" />
@@ -217,65 +218,71 @@ export function Hero() {
             </div>
 
             {/* Clean Contact Chips Row */}
-            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-600 dark:text-slate-400">
+            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-2.5 text-xs text-slate-600 dark:text-slate-400 w-full">
               
               {/* Email Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
-                <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <a 
-                  href={`mailto:${personalInfo.email}`}
-                  className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs transition-colors"
-                >
-                  {personalInfo.email}
-                </a>
+              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+                <div className="flex items-center gap-1.5 truncate">
+                  <Mail className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  <a 
+                    href={`mailto:${personalInfo.email}`}
+                    className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs transition-colors truncate"
+                  >
+                    {personalInfo.email}
+                  </a>
+                </div>
                 <button
                   onClick={handleCopyEmail}
                   type="button"
                   title="Copy email address"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer shrink-0"
                 >
                   {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {/* Phone Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
-                <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                <a 
-                  href={`tel:${personalInfo.phone}`}
-                  className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs transition-colors"
-                >
-                  {personalInfo.phone}
-                </a>
+              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+                <div className="flex items-center gap-1.5 truncate">
+                  <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  <a 
+                    href={`tel:${personalInfo.phone}`}
+                    className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs transition-colors"
+                  >
+                    {personalInfo.phone}
+                  </a>
+                </div>
                 <button
                   onClick={handleCopyPhone}
                   type="button"
                   title="Copy phone number"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer shrink-0"
                 >
                   {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
               </div>
 
               {/* ORCID Chip */}
-              <div className="flex items-center gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs">
-                <span className="w-3.5 h-3.5 rounded-full bg-[#A6CE39] text-[9px] text-white font-bold flex items-center justify-center leading-none">
-                  iD
-                </span>
-                <a
-                  href={personalInfo.orcidUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs inline-flex items-center gap-1 transition-colors"
-                >
-                  {personalInfo.orcid}
-                  <ExternalLink className="w-3 h-3 text-slate-400" />
-                </a>
+              <div className="flex items-center justify-between sm:justify-start gap-1.5 bg-white dark:bg-[#131c31] px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-2xs max-w-full w-full sm:w-auto overflow-hidden">
+                <div className="flex items-center gap-1.5 truncate">
+                  <span className="w-3.5 h-3.5 rounded-full bg-[#A6CE39] text-[9px] text-white font-bold flex items-center justify-center leading-none shrink-0">
+                    iD
+                  </span>
+                  <a
+                    href={personalInfo.orcidUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-emerald-600 dark:hover:text-emerald-400 font-mono text-xs inline-flex items-center gap-1 transition-colors truncate"
+                  >
+                    <span>{personalInfo.orcid}</span>
+                    <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" />
+                  </a>
+                </div>
                 <button
                   onClick={handleCopyOrcid}
                   type="button"
                   title="Copy ORCID ID"
-                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer"
+                  className="ml-1 p-0.5 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer shrink-0"
                 >
                   {copiedOrcid ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 </button>
@@ -290,9 +297,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
-            className="lg:col-span-5 flex justify-center items-center"
+            className="lg:col-span-5 flex justify-center items-center w-full"
           >
-            <div className="relative w-full max-w-[340px] sm:max-w-[370px] group">
+            <div className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[370px] group mx-auto">
               
               {/* Outer Animated Glowing Gradient Frame */}
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-slate-800 opacity-60 dark:opacity-75 blur-md group-hover:opacity-90 transition-opacity duration-500" />
@@ -307,7 +314,7 @@ export function Hero() {
                     alt={personalInfo.fullName}
                     fill
                     priority
-                    sizes="(max-width: 768px) 340px, 370px"
+                    sizes="(max-width: 768px) 280px, 370px"
                     className="object-contain transition-transform duration-500 group-hover:scale-[1.01]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
@@ -364,20 +371,20 @@ export function Hero() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+          className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6"
         >
           {metrics.map((stat, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-[#131c31] border border-slate-200/80 dark:border-slate-800 shadow-2xs hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-0.5"
+              className="p-4 sm:p-6 rounded-2xl bg-white dark:bg-[#131c31] border border-slate-200/80 dark:border-slate-800 shadow-2xs hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-0.5"
             >
-              <p className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {stat.value}
               </p>
-              <p className="mt-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+              <p className="mt-1 text-xs sm:text-sm font-semibold text-emerald-700 dark:text-emerald-400">
                 {stat.label}
               </p>
-              <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+              <p className="mt-0.5 text-[11px] sm:text-xs text-slate-500 dark:text-slate-400">
                 {stat.description}
               </p>
             </div>

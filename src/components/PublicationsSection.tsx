@@ -210,14 +210,14 @@ export function PublicationsSection() {
                     </div>
 
                     {/* Action Buttons Column */}
-                    <div className="flex flex-row lg:flex-col items-center lg:items-end gap-2 shrink-0 pt-2 lg:pt-0">
+                    <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-2 w-full lg:w-auto shrink-0 pt-3 lg:pt-0">
                       
                       {/* Direct Verified Publisher Outbound Link */}
                       <a
                         href={pub.publisherUrl || pub.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-all w-full lg:w-auto justify-center"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-all w-full sm:w-auto justify-center"
                         title="View direct journal publication record"
                       >
                         <span>Access Journal Record</span>
@@ -229,7 +229,7 @@ export function PublicationsSection() {
                         href={pub.scholarUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors w-full lg:w-auto justify-center"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-colors w-full sm:w-auto justify-center"
                         title="Search citations and indexing on Google Scholar"
                       >
                         <GraduationCap className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
@@ -237,11 +237,11 @@ export function PublicationsSection() {
                       </a>
 
                       {/* Copy Citation Actions */}
-                      <div className="flex items-center gap-1.5 w-full lg:w-auto">
+                      <div className="flex items-center gap-1.5 w-full sm:w-auto">
                         <button
                           onClick={() => handleCopyCitation(pub, "apa")}
                           type="button"
-                          className="flex-1 lg:flex-none inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all justify-center cursor-pointer active:scale-95 shadow-2xs"
+                          className="flex-1 sm:flex-none inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all justify-center cursor-pointer active:scale-95 shadow-2xs"
                           title="Copy APA 7th Edition Bibliographic Citation"
                         >
                           {copiedAction?.id === pub.id && copiedAction?.format === "apa" ? (
@@ -260,7 +260,7 @@ export function PublicationsSection() {
                         <button
                           onClick={() => handleCopyCitation(pub, "vancouver")}
                           type="button"
-                          className="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all justify-center cursor-pointer active:scale-95 shadow-2xs"
+                          className="flex-1 sm:flex-none inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition-all justify-center cursor-pointer active:scale-95 shadow-2xs"
                           title="Copy Vancouver Citation"
                         >
                           {copiedAction?.id === pub.id && copiedAction?.format === "vancouver" ? (
@@ -278,7 +278,7 @@ export function PublicationsSection() {
                       <button
                         onClick={() => setExpandedId(isExpanded ? null : pub.id)}
                         type="button"
-                        className="inline-flex items-center gap-1 px-2.5 py-1 text-xs text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                        className="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors w-full sm:w-auto justify-center"
                       >
                         <span>{isExpanded ? "Hide Abstract" : "Read Abstract"}</span>
                         {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}

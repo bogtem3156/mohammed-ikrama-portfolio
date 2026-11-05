@@ -25,12 +25,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0c1222] text-slate-900 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-white dark:bg-[#0c1222] text-slate-900 dark:text-slate-100 antialiased selection:bg-emerald-500 selection:text-white overflow-x-hidden max-w-full">
       {/* Top Navigation */}
       <Navbar />
 
       {/* Main Content Sections */}
-      <main>
+      <main className="overflow-x-hidden max-w-full">
         <Hero />
         <ResearchInterests />
         <PublicationsSection />

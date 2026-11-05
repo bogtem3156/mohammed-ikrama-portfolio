@@ -116,20 +116,20 @@ export function ResearchInterests() {
 
                 {/* Card Top: Evocative Icon, Domain Badge, & Formula */}
                 <div>
-                  <div className="flex items-start justify-between gap-4 mb-5">
+                  <div className="flex items-start justify-between gap-3 sm:gap-4 mb-5">
                     
                     {/* Artistic Glassmorphic Icon Box */}
-                    <div className={`p-4 rounded-2xl ${style.iconBox} ring-1 ring-inset backdrop-blur-xs shadow-lg transition-transform duration-300 group-hover:scale-105`}>
-                      <IconComponent className="w-7 h-7" />
+                    <div className={`p-3.5 sm:p-4 rounded-2xl ${style.iconBox} ring-1 ring-inset backdrop-blur-xs shadow-lg transition-transform duration-300 group-hover:scale-105 shrink-0`}>
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
 
                     {/* Scientific Badge & Formula Chip */}
-                    <div className="text-right space-y-1.5">
-                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border ${style.badgeClass} shadow-2xs`}>
-                        <Sparkles className="w-3 h-3" />
-                        <span>{style.badge}</span>
+                    <div className="text-right space-y-1.5 min-w-0">
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border ${style.badgeClass} shadow-2xs max-w-full truncate`}>
+                        <Sparkles className="w-3 h-3 shrink-0" />
+                        <span className="truncate">{style.badge}</span>
                       </span>
-                      <p className="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-wider">
+                      <p className="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-wider truncate">
                         {style.formula}
                       </p>
                     </div>
@@ -201,7 +201,7 @@ export function ResearchInterests() {
             
             <a
               href="#publications"
-              className="shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm transition-all shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-600/30 hover:-translate-y-0.5 active:scale-95 cursor-pointer text-center"
             >
               <span>Explore Research Output</span>
               <ArrowRight className="w-4 h-4" />

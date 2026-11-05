@@ -85,14 +85,14 @@ export function ContactSection() {
           >
             
             {/* Primary Institutional & Directory Card */}
-            <div className="p-7 sm:p-8 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-6 flex-1">
+            <div className="p-4 sm:p-6 md:p-8 rounded-2xl bg-white dark:bg-[#111827] border border-slate-200/80 dark:border-slate-800 shadow-xs space-y-6 flex-1">
               
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                   <Building2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">
                     {personalInfo.institution}
                   </h3>
                   <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-400 font-medium mt-0.5">
@@ -108,7 +108,7 @@ export function ContactSection() {
               <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3.5">
                 
                 {/* Official Email */}
-                <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                       <Mail className="w-4 h-4" />
@@ -124,12 +124,12 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 shrink-0">
+                  <div className="flex items-center gap-1.5 shrink-0 self-end sm:self-center">
                     <button
                       onClick={handleCopyEmail}
                       type="button"
                       title="Copy email address"
-                      className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                      className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                     >
                       {copiedEmail ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                     </button>
@@ -143,7 +143,7 @@ export function ContactSection() {
                 </div>
 
                 {/* Telephone & WhatsApp */}
-                <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
                       <Phone className="w-4 h-4" />
@@ -159,12 +159,12 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 shrink-0">
+                  <div className="flex items-center gap-1.5 shrink-0 self-end sm:self-center">
                     <button
                       onClick={handleCopyPhone}
                       type="button"
                       title="Copy phone number"
-                      className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                      className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                     >
                       {copiedPhone ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                     </button>
@@ -181,7 +181,7 @@ export function ContactSection() {
                 </div>
 
                 {/* ORCID Researcher ID */}
-                <div className="flex items-center justify-between gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200/70 dark:border-slate-800">
                   <div className="flex items-center gap-3 min-w-0">
                     <div className="w-9 h-9 rounded-lg bg-[#A6CE39]/15 flex items-center justify-center text-[#A6CE39] font-bold text-xs shrink-0">
                       iD
@@ -195,7 +195,7 @@ export function ContactSection() {
                         className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 font-mono flex items-center gap-1 truncate"
                       >
                         <span>{personalInfo.orcid}</span>
-                        <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       </a>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export function ContactSection() {
                     onClick={handleCopyOrcid}
                     type="button"
                     title="Copy ORCID"
-                    className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0"
+                    className="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors shrink-0 self-end sm:self-center cursor-pointer"
                   >
                     {copiedOrcid ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                   </button>
