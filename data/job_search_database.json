@@ -1,0 +1,324 @@
+{
+  "candidate": {
+    "name": "Mohammed Ikrama Shakeel Ahmed",
+    "title": "Assistant Professor of Pharmacology & Ph.D. Researcher",
+    "email": "mohemedikrama@gmail.com",
+    "phone": "+91 9511602973",
+    "linkedin": "https://www.linkedin.com/in/mohammed-ikrama-712b43287/",
+    "portfolio": "https://mohammed-ikrama-portfolio.vercel.app",
+    "cv_pdf": "https://mohammed-ikrama-portfolio.vercel.app/assets/CV.pdf",
+    "reg_no": "MSPC #375736 (PPP: N/314678)",
+    "target_salary_india": "\u20b990,000+ / month (\u20b911.0 \u2013 \u20b918.0 LPA CTC)",
+    "target_salary_abroad": "$75,000 \u2013 $120,000 / AED 18,000 \u2013 28,000/mo",
+    "notice_period": "30 Days (Negotiable for immediate research transition)"
+  },
+  "companies": [
+    {
+      "id": "dr-reddys",
+      "company": "Dr. Reddy's Laboratories",
+      "hub": "Hyderabad",
+      "location": "IPDO Bachupally / Discovery Biology Bollaram, Hyderabad",
+      "division": "Integrated Product Development Organization (IPDO) & Biologics Discovery",
+      "target_roles": [
+        "Scientist - Preclinical In-Vivo Pharmacology",
+        "Senior Research Scientist - NDDS"
+      ],
+      "expected_ctc": "\u20b912.0 - \u20b916.5 LPA",
+      "key_focus": "Central Nervous System, Metabolic Disorders, Oral Bioavailability Enhancement",
+      "career_url": "https://careers.drreddys.com/",
+      "email_format": "firstname.lastname@drreddys.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "aragen",
+      "company": "Aragen Life Sciences (formerly GVK BIO)",
+      "hub": "Hyderabad",
+      "location": "Nacharam & Mallapur Discovery Campus, Hyderabad",
+      "division": "Discovery Biology, In-Vivo Pharmacology & Safety Assessment",
+      "target_roles": [
+        "Study Director - In-Vivo Pharmacology",
+        "Senior Scientist - Safety Pharmacology"
+      ],
+      "expected_ctc": "\u20b911.5 - \u20b915.0 LPA",
+      "key_focus": "Preclinical CRO models, FST/TST, Inflammation, IAEC/CPCSEA protocol compliance",
+      "career_url": "https://www.aragen.com/careers/",
+      "email_format": "firstname.lastname@aragen.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "sai-life",
+      "company": "Sai Life Sciences",
+      "hub": "Hyderabad",
+      "location": "Genome Valley, Shamirpet, Hyderabad",
+      "division": "Preclinical Discovery Biology & DMPK",
+      "target_roles": [
+        "Senior Scientist - Discovery Biology",
+        "Research Scientist - In-Vivo Efficacy"
+      ],
+      "expected_ctc": "\u20b911.0 - \u20b914.5 LPA",
+      "key_focus": "Small molecules, In-vivo rodent efficacy models, PK/PD correlation",
+      "career_url": "https://www.sailife.com/careers/",
+      "email_format": "firstname.l@sailife.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "aurobindo",
+      "company": "Aurobindo Pharma",
+      "hub": "Hyderabad",
+      "location": "Aurobindo Pharma Research Centre (APRC-I/II), Bachupally & Pashamylaram",
+      "division": "Preclinical Research & Novel Drug Delivery Systems",
+      "target_roles": [
+        "Scientist - Formulation NDDS",
+        "Scientist - Pharmacology & Toxicology"
+      ],
+      "expected_ctc": "\u20b910.5 - \u20b914.0 LPA",
+      "key_focus": "Nanoparticles, Vesicular drug carriers, Bioequivalence & Preclinical Screening",
+      "career_url": "https://www.aurobindo.com/careers/",
+      "email_format": "firstname.lastname@aurobindo.com",
+      "status": "Target Identified",
+      "priority": "Medium"
+    },
+    {
+      "id": "biological-e",
+      "company": "Biological E. Limited",
+      "hub": "Hyderabad",
+      "location": "Genome Valley, Shamirpet, Hyderabad",
+      "division": "Biologics, In-Vivo Bioassay & Safety Pharmacology",
+      "target_roles": [
+        "Senior Executive / Assistant Manager - In-Vivo Testing",
+        "Scientist - Preclinical Safety"
+      ],
+      "expected_ctc": "\u20b910.0 - \u20b913.5 LPA",
+      "key_focus": "Animal models, ELISA, Bioassays, Immunogenicity & Toxicology",
+      "career_url": "https://www.biologicale.com/careers.html",
+      "email_format": "firstname.lastname@biologicale.com",
+      "status": "Target Identified",
+      "priority": "Medium"
+    },
+    {
+      "id": "bharat-biotech",
+      "company": "Bharat Biotech International",
+      "hub": "Hyderabad",
+      "location": "Genome Valley, Hyderabad",
+      "division": "Preclinical Animal Research & Translational Medicine",
+      "target_roles": [
+        "Scientist - In-Vivo Pharmacology & Preclinical Safety",
+        "Research Scientist - Translational Biology"
+      ],
+      "expected_ctc": "\u20b911.0 - \u20b915.0 LPA",
+      "key_focus": "Preclinical challenge models, Rodent handling, CPCSEA compliance",
+      "career_url": "https://www.bharatbiotech.com/careers.html",
+      "email_format": "hr@bharatbiotech.com",
+      "status": "Target Identified",
+      "priority": "Medium"
+    },
+    {
+      "id": "syngene",
+      "company": "Syngene International (Biocon Group)",
+      "hub": "Bangalore",
+      "location": "Biocon Park, Electronic City & Bommasandra, Bangalore",
+      "division": "Discovery Biology, In-Vivo Pharmacology & Toxicology",
+      "target_roles": [
+        "Senior Scientist - In-Vivo Pharmacology",
+        "Study Director - Preclinical Biology",
+        "Principal Investigator - Neuroscience"
+      ],
+      "expected_ctc": "\u20b913.0 - \u20b918.0 LPA",
+      "key_focus": "Global CRO studies, CNS behavioral models (FST, TST, EPM), Neurochemistry, CPCSEA/AAALAC audits",
+      "career_url": "https://www.syngeneintl.com/careers/",
+      "email_format": "firstname.lastname@syngeneintl.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "anthem",
+      "company": "Anthem Biosciences",
+      "hub": "Bangalore",
+      "location": "Bommasandra Industrial Area & Harohalli, Bangalore",
+      "division": "Preclinical Pharmacology, Safety Assessment & Discovery CRO",
+      "target_roles": [
+        "Senior Scientist - In-Vivo Pharmacology",
+        "Project Manager - Preclinical Studies"
+      ],
+      "expected_ctc": "\u20b911.5 - \u20b915.5 LPA",
+      "key_focus": "Rodent models of depression, pain, inflammation, pharmacokinetic sampling",
+      "career_url": "https://www.anthembio.com/careers/",
+      "email_format": "firstname.lastname@anthembio.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "aurigene",
+      "company": "Aurigene Discovery Technologies",
+      "hub": "Bangalore",
+      "location": "Electronic City Phase II, Bangalore",
+      "division": "Translational Pharmacology & In-Vivo Biology",
+      "target_roles": [
+        "Research Scientist - In-Vivo Pharmacology",
+        "Scientist - Pharmacology & Biomarkers"
+      ],
+      "expected_ctc": "\u20b912.0 - \u20b916.0 LPA",
+      "key_focus": "Oncology, Inflammation, In-vivo drug screening, PK/PD assays",
+      "career_url": "https://www.aurigene.com/careers/",
+      "email_format": "firstname.lastname@aurigene.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "astrazeneca-blr",
+      "company": "AstraZeneca India R&D",
+      "hub": "Bangalore",
+      "location": "Manyata Tech Park, Nagavara, Bangalore",
+      "division": "Global Medical Affairs, Scientific Communications & Preclinical Data Systems",
+      "target_roles": [
+        "Medical Science Liaison (MSL) - Neuro / Oncology",
+        "Scientific Communications Lead"
+      ],
+      "expected_ctc": "\u20b915.0 - \u20b922.0 LPA",
+      "key_focus": "Scientific liaison with key opinion leaders, clinical and preclinical data interpretation",
+      "career_url": "https://careers.astrazeneca.com/",
+      "email_format": "firstname.lastname@astrazeneca.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "serum-inst",
+      "company": "Serum Institute of India (Cyrus Poonawalla Group)",
+      "hub": "Pune",
+      "location": "Hadapsar, Pune, Maharashtra",
+      "division": "Animal Research & Safety Pharmacology / Bioassay",
+      "target_roles": [
+        "Senior Research Scientist - In-Vivo Toxicology",
+        "Study Scientist - Preclinical Bioassays"
+      ],
+      "expected_ctc": "\u20b912.0 - \u20b917.0 LPA",
+      "key_focus": "In-vivo quality control assays, safety pharmacology, rodent disease models",
+      "career_url": "https://www.seruminstitute.com/careers.php",
+      "email_format": "firstname.lastname@seruminstitute.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "lupin-lrp",
+      "company": "Lupin Research Park (LRP)",
+      "hub": "Pune",
+      "location": "Nande Village, Mulshi, Pune, Maharashtra",
+      "division": "Novel Drug Discovery & Preclinical Pharmacology",
+      "target_roles": [
+        "Senior Scientist - In-Vivo Pharmacology",
+        "Research Scientist - NDDS & Formulation"
+      ],
+      "expected_ctc": "\u20b912.5 - \u20b916.5 LPA",
+      "key_focus": "Preclinical CNS & Respiratory models, Nanocarriers, Molecular docking screening",
+      "career_url": "https://www.lupin.com/careers/",
+      "email_format": "firstname.lastname@lupin.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "emcure",
+      "company": "Emcure Pharmaceuticals",
+      "hub": "Pune",
+      "location": "Hinjewadi Infotech Park & Bhosari, Pune, Maharashtra",
+      "division": "R&D - Preclinical Formulations & Drug Delivery",
+      "target_roles": [
+        "Scientist - Novel Drug Delivery Systems (NDDS)",
+        "Manager - Preclinical Documentation & CPCSEA"
+      ],
+      "expected_ctc": "\u20b911.0 - \u20b914.5 LPA",
+      "key_focus": "Liposomes, Niosomes, Biodegradable polymeric carriers, Preclinical kinetics",
+      "career_url": "https://www.emcure.com/careers/",
+      "email_format": "firstname.lastname@emcure.co.in",
+      "status": "Target Identified",
+      "priority": "Medium"
+    },
+    {
+      "id": "gennova",
+      "company": "Gennova Biopharmaceuticals",
+      "hub": "Pune",
+      "location": "Hinjewadi Phase II, Pune, Maharashtra",
+      "division": "Translational Biology & Preclinical Animal Testing",
+      "target_roles": [
+        "Scientist - In-Vivo Pharmacology",
+        "Preclinical Project Coordinator"
+      ],
+      "expected_ctc": "\u20b911.0 - \u20b915.0 LPA",
+      "key_focus": "Nanoparticle mRNA formulations, Preclinical biodistribution, rodent immunogenicity",
+      "career_url": "https://gennova.bio/careers/",
+      "email_format": "careers@gennova.bio",
+      "status": "Target Identified",
+      "priority": "Medium"
+    },
+    {
+      "id": "eurofins",
+      "company": "Eurofins Scientific / Discovery",
+      "hub": "International / India",
+      "location": "Bangalore / Europe / USA / Singapore",
+      "division": "Eurofins Discovery - In-Vivo Pharmacology & Safety",
+      "target_roles": [
+        "Study Director - In-Vivo Pharmacology",
+        "Senior Scientist - Neurobiology"
+      ],
+      "expected_ctc": "\u20b914.0 - \u20b920.0 LPA (India) | $85,000 - $115,000 (US/Europe)",
+      "key_focus": "Neuropharmacology CRO screening, High-throughput in-vivo assays, International GLP compliance",
+      "career_url": "https://www.eurofins.com/careers/",
+      "email_format": "firstname.lastname@eurofins.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "charles-river",
+      "company": "Charles River Laboratories",
+      "hub": "International (UK / Germany / USA)",
+      "location": "Edinburgh (UK) / Frankfurt (Germany) / Wilmington, MA (USA)",
+      "division": "Discovery & Safety Assessment (In-Vivo Pharmacology)",
+      "target_roles": [
+        "Research Scientist I/II - In-Vivo Pharmacology",
+        "Postdoctoral Scientist - CNS Pharmacology"
+      ],
+      "expected_ctc": "\u00a345,000 - \u00a362,000 (UK) | $85,000 - $110,000 (USA)",
+      "key_focus": "Neuroscience models, Behavioral assays, In-vivo microdialysis, Stereotaxic surgery",
+      "career_url": "https://jobs.criver.com/",
+      "email_format": "firstname.lastname@criver.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "novartis",
+      "company": "Novartis Healthcare / NIBR",
+      "hub": "Hyderabad / Switzerland / USA",
+      "location": "Novartis Knowledge City, Hitec City, Hyderabad & Basel, Switzerland",
+      "division": "Novartis Institutes for BioMedical Research (NIBR) & Global Drug Development",
+      "target_roles": [
+        "Senior Scientific Communications Specialist",
+        "Preclinical Data Scientist / MSL"
+      ],
+      "expected_ctc": "\u20b916.0 - \u20b924.0 LPA (India) | CHF 110,000 - 135,000 (Switzerland)",
+      "key_focus": "Scientific data dissemination, Preclinical-to-clinical bridge, Regulatory dossier preparation",
+      "career_url": "https://www.novartis.com/careers",
+      "email_format": "firstname.lastname@novartis.com",
+      "status": "Target Identified",
+      "priority": "High"
+    },
+    {
+      "id": "julphar-uae",
+      "company": "Julphar Pharmaceuticals (Gulf Pharmaceutical Industries)",
+      "hub": "UAE / Gulf",
+      "location": "Ras Al Khaimah / Dubai, United Arab Emirates",
+      "division": "R&D Formulation & Preclinical Research",
+      "target_roles": [
+        "R&D Scientist - Formulation Development",
+        "Preclinical Regulatory & Scientific Affairs Specialist"
+      ],
+      "expected_ctc": "AED 18,000 - 26,000 / month (Tax-Free: ~\u20b94.0 - \u20b95.8 Lakhs/mo)",
+      "key_focus": "NDDS formulation development, Regulatory dossiers (MOHAP UAE, GCC SFDA), Bioavailability",
+      "career_url": "https://julphar.net/careers/",
+      "email_format": "careers@julphar.net",
+      "status": "Target Identified",
+      "priority": "High"
+    }
+  ]
+}
